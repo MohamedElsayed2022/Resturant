@@ -1,7 +1,12 @@
 package model;
 
 import jakarta.persistence.*;
+import lombok.*;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 @Entity
 @Table(name = "order")
 public class Order extends CategoryOrder {
