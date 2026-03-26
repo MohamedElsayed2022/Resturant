@@ -16,6 +16,7 @@ public class Order extends CategoryOrder {
     @Column(name = "image")
     private String img;
     @Column(name = "description")
+    @Lob
     private String description;
     @ManyToOne
     @JoinColumn(name = "id_category")
