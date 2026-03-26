@@ -8,7 +8,7 @@ import lombok.*;
 @Getter
 @Setter
 @Entity
-@Table(name = "orderFood")
+@Table(name = "orders")
 public class Order extends CategoryOrder {
 
     @Column(name = "price")
@@ -17,5 +17,8 @@ public class Order extends CategoryOrder {
     private String img;
     @Column(name = "description")
     private String description;
+    @ManyToOne
+    @JoinColumn(name = "id_category")
+    private Category category;
 
 }
