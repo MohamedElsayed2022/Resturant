@@ -8,7 +8,7 @@ import lombok.*;
 @Getter
 @Setter
 @Entity
-@Table(name = "order")
+@Table(name = "orderFood")
 public class Order extends CategoryOrder {
 
     @Column(name = "price")

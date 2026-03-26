@@ -10,8 +10,6 @@ import lombok.Setter;
 @Table(name = "category")
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Category extends CategoryOrder {
 
 }
