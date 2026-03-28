@@ -1,4 +1,4 @@
-package model;
+package com.coding.resturant.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

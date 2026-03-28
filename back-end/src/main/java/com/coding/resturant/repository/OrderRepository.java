@@ -1,6 +1,5 @@
-package deo;
-
-import model.Order;
+package com.coding.resturant.repository;
+import com.coding.resturant.model.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

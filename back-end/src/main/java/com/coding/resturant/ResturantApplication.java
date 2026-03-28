@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.persistence.autoconfigure.EntityScan;
 
 @SpringBootApplication
-@EntityScan("model")
+@EntityScan("com/coding/resturant/model")
 public class ResturantApplication {
 
     public static void main(String[] args) {
