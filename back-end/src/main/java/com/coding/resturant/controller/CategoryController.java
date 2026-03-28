@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 public class CategoryController {
     private final CategoryService categoryService;
-    @GetMapping("/api/getAllCategory")
+    @GetMapping("/api/categories")
     public List<Category> getAllCategory() {
       return categoryService.allCategories();
     }
