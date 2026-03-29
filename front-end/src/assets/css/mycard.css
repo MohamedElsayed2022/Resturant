@@ -1,4 +1,71 @@
 .card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.3s;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h1 {
+  font-size: 20px;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #333;
+}
+
+.price {
+  color: #28a745;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.dis {
+  font-size: 15px !important;
+  color: #777 !important;
+  padding: 0 10px;
+}
+
+.card button {
+  margin: 15px;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+
+.dis
+{
+  font-size: 19px !important;
+  color: saddlebrown !important;
+}
+.btn:not(:disabled):not(.disabled) {
+  margin: 20px 10px 5px;
+}
+
+
+
+.myorder {
+  margin-top: 30px;
+  padding: 10px;
+}
+
+/* .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
   margin: auto;
@@ -28,4 +95,4 @@
   margin-top: 20px;
   background-color: beige;
   padding: 29px;
-}
+} */
