@@ -13,6 +13,8 @@ import java.util.Set;
 @Setter
 public class Category extends CategoryOrder {
 
+    @Column(name = "categorylogo")
+    private String logo;
     @JsonIgnore
     @OneToMany(mappedBy = "category")
     private Set<Order> orders;
