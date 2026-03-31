@@ -17,4 +17,5 @@ public class OrderService {
     public List<Order> getOrdersByCategoryId(Long categoryId) {
         return orderRepository.findByCategoryId(categoryId);
     }
+
 }
