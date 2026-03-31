@@ -2,8 +2,8 @@ export interface Order  {
         price: number,
         img: String,
         description: String,
-        createdDate: String,
+        createdDate: Date,
         id: number,
-        lastModifiedDate: String,
+        lastModifiedDate: Date,
         name: String
     }
