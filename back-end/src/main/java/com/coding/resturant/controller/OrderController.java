@@ -4,24 +4,26 @@ import com.coding.resturant.model.Order;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.coding.resturant.service.OrderService;
 
 import java.util.List;
 
 @RestController
 @AllArgsConstructor
+@RequestMapping("/api/")
 public class OrderController {
     private final OrderService orderService;
-    @GetMapping("/api/orders")
+    @GetMapping("orders")
   public List<Order> getAllOrders(){
       return orderService.getOrders();
   }
-  @GetMapping("/api/category")
-  public List<Order> getOrdersByCategoryId(@RequestParam Long categoryId){
-        return orderService.getOrdersByCategoryId(categoryId);
+  @GetMapping("category")
+  public List<Order> getOrdersByCategoryId(@RequestParam Long id){
+        return orderService.getOrdersByCategoryId(id);
+  }
+  @GetMapping("orders/search")
+    public List<Order> getOrdersByName(@RequestParam String name){
+        return orderService.getOrdersByName(name);
   }
 }

@@ -17,5 +17,8 @@ public class OrderService {
     public List<Order> getOrdersByCategoryId(Long categoryId) {
         return orderRepository.findByCategoryId(categoryId);
     }
+    public List<Order> getOrdersByName(String name){
+        return orderRepository.findByNameContaining(name);
+    }
 
 }
