@@ -8,5 +8,5 @@ import java.util.List;
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Long> {
      List<Order> findByCategoryId(Long categoryId);
-     List<Order> findByNameContaining(String name);
+     List<Order> findByNameContaining(String Key);
 }

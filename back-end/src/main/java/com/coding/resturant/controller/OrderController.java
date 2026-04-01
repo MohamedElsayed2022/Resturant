@@ -22,8 +22,8 @@ public class OrderController {
   public List<Order> getOrdersByCategoryId(@RequestParam Long id){
         return orderService.getOrdersByCategoryId(id);
   }
-  @GetMapping("orders/search")
-    public List<Order> getOrdersByName(@RequestParam String name){
-        return orderService.getOrdersByName(name);
+  @GetMapping("orderKey")
+    public List<Order> getOrdersByKey(@RequestParam String word){
+        return orderService.getOrdersByKey(word);
   }
 }
