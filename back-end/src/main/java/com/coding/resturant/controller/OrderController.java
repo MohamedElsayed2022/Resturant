@@ -26,4 +26,8 @@ public class OrderController {
     public List<Order> getOrdersByKey(@RequestParam String word){
         return orderService.getOrdersByKey(word);
   }
+  @GetMapping("orderId")
+    public Order getOrderById(@RequestParam Long id){
+        return orderService.getOrderById(id);
+  }
 }
