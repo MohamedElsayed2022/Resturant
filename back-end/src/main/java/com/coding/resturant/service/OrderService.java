@@ -3,6 +3,8 @@ package com.coding.resturant.service;
 import com.coding.resturant.model.Order;
 import com.coding.resturant.repository.OrderRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,14 +13,17 @@ import java.util.List;
 @AllArgsConstructor
 public class OrderService {
     private final OrderRepository orderRepository;
-    public List<Order> getOrders() {
-        return orderRepository.findAll();
+    public List<Order> getOrders(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return orderRepository.findAll(pageable).getContent();
     }
-    public List<Order> getOrdersByCategoryId(Long categoryId) {
-        return orderRepository.findByCategoryId(categoryId);
+    public List<Order> getOrdersByCategoryId(Long categoryId , int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return orderRepository.findByCategoryId(categoryId , pageable).getContent();
     }
-    public List<Order> getOrdersByKey(String Key){
-        return orderRepository.findByNameContaining(Key);
+    public List<Order> getOrdersByKey(String Key , int page, int size){
+        Pageable pageable = PageRequest.of(page, size);
+        return orderRepository.findByNameContaining(Key ,pageable).getContent();
     }
     public Order getOrderById(Long id){
         return orderRepository.findById(id).get();

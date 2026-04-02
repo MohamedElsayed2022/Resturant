@@ -14,20 +14,20 @@ import java.util.List;
 @RequestMapping("/api/")
 public class OrderController {
     private final OrderService orderService;
-    @GetMapping("orders")
-  public List<Order> getAllOrders(){
-      return orderService.getOrders();
+    @GetMapping("allOrders")
+  public List<Order> getAllOrders(@RequestParam int page , @RequestParam int size){
+        return orderService.getOrders(page , size);
   }
   @GetMapping("category")
-  public List<Order> getOrdersByCategoryId(@RequestParam Long id){
-        return orderService.getOrdersByCategoryId(id);
+  public List<Order> getOrdersByCategoryId( @RequestParam int page , @RequestParam int size ,@RequestParam Long id){
+        return orderService.getOrdersByCategoryId(id , page , size);
   }
   @GetMapping("orderKey")
-    public List<Order> getOrdersByKey(@RequestParam String word){
-        return orderService.getOrdersByKey(word);
+    public List<Order> getOrdersByKey( @RequestParam int page , @RequestParam int size , @RequestParam String word){
+        return orderService.getOrdersByKey(word , page , size);
   }
-  @GetMapping("orderId")
-    public Order getOrderById(@RequestParam Long id){
+  @GetMapping("order")
+    public Order getOrderById(  @RequestParam Long id){
         return orderService.getOrderById(id);
   }
 }
