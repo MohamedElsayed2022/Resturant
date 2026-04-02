@@ -34,4 +34,8 @@ public class OrderController {
   public Long getOrdersSize(){
         return orderService.getOrdersSize();
   }
+  @GetMapping("orderSizeByCatId")
+  public Long getLengthOrderByCategoryId(@RequestParam Long categoryId){
+        return  orderService.getOrderCountByCategoryId(categoryId);
+  }
 }

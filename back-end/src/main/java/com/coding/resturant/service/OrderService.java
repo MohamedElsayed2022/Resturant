@@ -32,4 +32,8 @@ public class OrderService {
     public long getOrdersSize() {
         return orderRepository.count();
     }
+    public long getOrderCountByCategoryId(long categoryId){
+        return orderRepository.getOrderLengthByCategoryId(categoryId);
+    }
+
 }
