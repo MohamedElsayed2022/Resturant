@@ -30,4 +30,8 @@ public class OrderController {
     public Order getOrderById(  @RequestParam Long id){
         return orderService.getOrderById(id);
   }
+  @GetMapping("orderSize")
+  public Long getOrdersSize(){
+        return orderService.getOrdersSize();
+  }
 }

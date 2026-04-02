@@ -26,7 +26,10 @@ public class OrderService {
         return orderRepository.findByNameContaining(Key ,pageable).getContent();
     }
     public Order getOrderById(Long id){
-        return orderRepository.findById(id).get();
+        return orderRepository.findById(id).orElseThrow(() -> new RuntimeException("Order not found"));
     }
 
+    public long getOrdersSize() {
+        return orderRepository.count();
+    }
 }
