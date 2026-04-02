@@ -13,9 +13,8 @@ import java.util.Optional;
 public interface OrderRepository extends JpaRepository<Order, Long> {
      Page<Order> findByCategoryId(Long categoryId , Pageable pageable);
      Page<Order> findByNameContaining(String Key , Pageable pageable);
-//     Optional<Order> findOrderById(Long id);
-
-
      @Query("select count(o.id) from Order o where o.category.id = ?1")
      Long getOrderLengthByCategoryId(Long categoryId);
+     @Query("select count(o.id) from Order o where o.name like %?1%")
+     Long getOrderLengthByKey(String Key);
 }

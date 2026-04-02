@@ -35,5 +35,8 @@ public class OrderService {
     public long getOrderCountByCategoryId(long categoryId){
         return orderRepository.getOrderLengthByCategoryId(categoryId);
     }
+    public long getOrderCountByKey(String Key){
+        return orderRepository.getOrderLengthByKey(Key);
+    }
 
 }
