@@ -1,5 +1,6 @@
 package com.coding.resturant.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,6 +14,7 @@ import lombok.Setter;
 @MappedSuperclass
 public class PublicData extends BaseEntity{
 
+    @Column(name = "name")
     private String name;
 
 
