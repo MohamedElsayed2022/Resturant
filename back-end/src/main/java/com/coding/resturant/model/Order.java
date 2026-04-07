@@ -21,7 +21,7 @@ public class Order extends CategoryOrder {
     private String description;
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "id_category")
+    @JoinColumn(name = "category_id")
     private Category category;
 
 

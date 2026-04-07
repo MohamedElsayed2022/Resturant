@@ -19,6 +19,6 @@ public class State extends PublicData{
 
 
     @ManyToOne
-    @JoinColumn(name = "id_country")
+    @JoinColumn(name = "country_id")
     private Country country;
 }
