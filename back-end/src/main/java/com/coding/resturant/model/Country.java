@@ -13,9 +13,10 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "countries")
+@Table(name = "country")
 public class Country extends PublicData{
 
+    @Column(name = "code")
     private String code;
 
     @OneToMany(mappedBy = "country")
