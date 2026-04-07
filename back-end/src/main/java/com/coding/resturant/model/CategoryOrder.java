@@ -16,9 +16,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @MappedSuperclass
-public class CategoryOrder extends  BaseEntity {
-    @Column(name = "name")
-    private String name;
+public class CategoryOrder extends  PublicData {
 
     @Column(name = "created_at")
     @CreationTimestamp
