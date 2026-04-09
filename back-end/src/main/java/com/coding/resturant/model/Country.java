@@ -1,5 +1,6 @@
 package com.coding.resturant.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,6 +20,7 @@ public class Country extends PublicData{
     @Column(name = "code")
     private String code;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "country")
     private List<State> states;
 }
