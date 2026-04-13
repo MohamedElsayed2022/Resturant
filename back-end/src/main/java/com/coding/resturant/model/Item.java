@@ -2,6 +2,7 @@ package com.coding.resturant.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,4 +22,8 @@ public class Item extends BaseEntity {
     private int quantity;
     @Column(name = "price")
     private int price;
+
+    @ManyToOne
+    private RequestOrder requestOrder;
+
 }

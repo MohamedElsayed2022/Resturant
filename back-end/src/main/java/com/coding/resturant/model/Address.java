@@ -1,8 +1,6 @@
 package com.coding.resturant.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,4 +19,9 @@ public class Address extends  CategoryOrder {
     private String state;
     @Column(name = "zip_code")
     private String zipCode;
+
+    @OneToOne
+    private RequestOrder requestOrder;
+
+
 }

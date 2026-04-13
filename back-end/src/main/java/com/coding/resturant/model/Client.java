@@ -1,12 +1,13 @@
 package com.coding.resturant.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
+import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,4 +21,9 @@ public class Client extends PublicData {
     private String email;
     @Column(name = "phone_number")
     private String phoneNumber;
+
+    @OneToMany
+    private List<RequestOrder>  requestOrders;
+
+
 }

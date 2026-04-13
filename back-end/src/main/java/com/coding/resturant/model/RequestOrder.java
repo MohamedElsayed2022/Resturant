@@ -1,13 +1,12 @@
 package com.coding.resturant.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Lob;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -25,5 +24,18 @@ public class RequestOrder extends CategoryOrder {
     private int totalPrice;
     @Column(name = "total_quantity")
     private int totalQuantity;
+
+    @OneToMany
+    @JoinColumn(name = "item_id")
+    private List<Item> items;
+
+    @OneToOne
+    @JoinColumn(name = "address_id")
+    private Address address;
+
+    @ManyToOne
+    @JoinColumn(name = "requestOrders")
+    private Client  client;
+
 
 }
