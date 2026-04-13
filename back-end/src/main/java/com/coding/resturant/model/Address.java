@@ -19,6 +19,6 @@ public class Address extends  CategoryOrder {
     private String country;
     @Column(name = "state")
     private String state;
-    @Column(name = "zipCode")
+    @Column(name = "zip_code")
     private String zipCode;
 }

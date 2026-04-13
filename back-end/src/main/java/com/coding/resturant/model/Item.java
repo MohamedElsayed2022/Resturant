@@ -15,7 +15,7 @@ import lombok.Setter;
 @Entity
 @Table(name = "item")
 public class Item extends BaseEntity {
-    @Column(name = "img")
+    @Column(name = "image")
     private String img;
     @Column(name = "quantity")
     private int quantity;

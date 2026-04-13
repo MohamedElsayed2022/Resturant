@@ -18,6 +18,6 @@ public class Client extends PublicData {
 
     @Column(name = "email")
     private String email;
-    @Column(name = "phoneNumber")
+    @Column(name = "phone_number")
     private String phoneNumber;
 }
