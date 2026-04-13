@@ -11,7 +11,7 @@ import java.util.Set;
 @Table(name = "category")
 @Getter
 @Setter
-public class Category extends CategoryOrder {
+public class Category extends PublicData {
 
     @Column(name = "categorylogo")
     private String logo;

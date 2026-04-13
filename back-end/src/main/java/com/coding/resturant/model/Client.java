@@ -13,15 +13,11 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "requestOrder")
-public class RequestOrder extends CategoryOrder {
-    @Column(name = "code")
-    private String code;
-    @Column(name = "note")
-    private String note ;
-    @Column(name = "totalPrice")
-    private int totalPrice;
-    @Column(name = "totalQuantity")
-    private int totalQuantity;
+@Table(name = "client")
+public class Client extends PublicData {
 
+    @Column(name = "email")
+    private String email;
+    @Column(name = "phoneNumber")
+    private String phoneNumber;
 }
