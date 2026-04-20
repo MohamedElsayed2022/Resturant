@@ -20,7 +20,7 @@ public class Address extends  CategoryOrder {
     @Column(name = "zip_code")
     private String zipCode;
 
-    @OneToOne
+    @OneToOne(mappedBy = "address")
     private RequestOrder requestOrder;
 
 

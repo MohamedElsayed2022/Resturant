@@ -1,9 +1,6 @@
 package com.coding.resturant.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,6 +21,7 @@ public class Item extends BaseEntity {
     private int price;
 
     @ManyToOne
+    @JoinColumn(name = "request_order_id")
     private RequestOrder requestOrder;
 
 }

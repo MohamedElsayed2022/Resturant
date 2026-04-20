@@ -22,7 +22,7 @@ public class Client extends PublicData {
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL , mappedBy = "client")
     private List<RequestOrder>  requestOrders;
 
 

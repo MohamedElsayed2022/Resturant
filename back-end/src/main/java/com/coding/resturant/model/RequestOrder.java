@@ -25,8 +25,7 @@ public class RequestOrder extends CategoryOrder {
     @Column(name = "total_quantity")
     private int totalQuantity;
 
-    @OneToMany
-    @JoinColumn(name = "item_id")
+    @OneToMany(cascade = CascadeType.ALL , mappedBy = "requestOrder")
     private List<Item> items;
 
     @OneToOne
@@ -34,7 +33,7 @@ public class RequestOrder extends CategoryOrder {
     private Address address;
 
     @ManyToOne
-    @JoinColumn(name = "requestOrders")
+    @JoinColumn(name = "client_id")
     private Client  client;
 
 
