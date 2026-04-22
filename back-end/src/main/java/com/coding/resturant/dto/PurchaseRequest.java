@@ -10,7 +10,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Setter
 @Getter
@@ -19,7 +21,7 @@ import java.util.List;
 public class PurchaseRequest {
     private Client client;
     private RequestOrder requestOrder;
-    private List<Item> items;
+    private Set<Item> items = new HashSet<>();
     private Address fromAddress;
     private Address toAddress;
 }

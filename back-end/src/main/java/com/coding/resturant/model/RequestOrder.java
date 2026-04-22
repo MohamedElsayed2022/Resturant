@@ -6,7 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -26,15 +28,15 @@ public class RequestOrder extends CategoryOrder {
     private int totalQuantity;
 
     @OneToMany(cascade = CascadeType.ALL , mappedBy = "requestOrder")
-    private List<Item> items;
+    private Set<Item> items = new HashSet<>();
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "to_address_id" , referencedColumnName = "id")
-    private Address toAddress;
+    private Address toAddress = new Address();
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "from_address_id" , referencedColumnName = "id")
-    private Address fromAddress;
+    private Address fromAddress = new Address();
 
     @ManyToOne
     @JoinColumn(name = "client_id")

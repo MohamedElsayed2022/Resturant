@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -23,7 +25,7 @@ public class Client extends PublicData {
     private String phoneNumber;
 
     @OneToMany(cascade = CascadeType.ALL , mappedBy = "client")
-    private List<RequestOrder>  requestOrders;
+    private Set<RequestOrder>  requestOrders = new HashSet<>();
 
 
 }
