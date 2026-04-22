@@ -28,11 +28,11 @@ public class RequestOrder extends CategoryOrder {
     @OneToMany(cascade = CascadeType.ALL , mappedBy = "requestOrder")
     private List<Item> items;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "to_address_id" , referencedColumnName = "id")
     private Address toAddress;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "from_address_id" , referencedColumnName = "id")
     private Address fromAddress;
 
