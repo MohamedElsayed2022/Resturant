@@ -40,7 +40,12 @@ public class RequestOrder extends CategoryOrder {
 
     @ManyToOne
     @JoinColumn(name = "client_id")
-    private Client  client;
+    private Client  client = new Client();
+
+    public void addItem(Item item) {
+        items.add(item);
+        item.setRequestOrder(this);
+    }
 
 
 }
