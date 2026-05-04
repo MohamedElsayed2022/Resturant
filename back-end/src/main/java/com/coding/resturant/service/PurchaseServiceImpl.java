@@ -6,12 +6,14 @@ import com.coding.resturant.model.Item;
 import com.coding.resturant.model.RequestOrder;
 import com.coding.resturant.repository.ClientRepository;
 import jakarta.transaction.Transactional;
-
-import java.util.HashSet;
-import java.util.Set;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
+import java.util.List;
 import java.util.UUID;
-
+@AllArgsConstructor
+@Service
 public class PurchaseServiceImpl implements PurchaseService {
+
     private ClientRepository clientRepository;
     @Override
     @Transactional
@@ -22,7 +24,7 @@ public class PurchaseServiceImpl implements PurchaseService {
         requestOrder.setCode(myCode);
         //[2]
 
-        Set<Item> items = purchase.getItems();
+        List<Item> items = purchase.getItems();
         items.forEach(requestOrder::addItem);
         //[3]
         requestOrder.setFromAddress(purchase.getFromAddress());
